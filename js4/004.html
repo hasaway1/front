@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="kor" placeholder="국어 점수...">
+  <input type="text" id="eng" placeholder="영어 점수...">
+  <button onclick="판정()">판정</button>
+  <hr>
+  <p id="target"></p>
+  <script>
+    // 1. 국어점수
+    // 2. 영어점수
+    // 3. 평균
+    // 4. 결과 출력
+    function 판정() {
+      const kor = document.getElementById('kor').value;
+      const eng = document.getElementById('eng').value;
+      const avg = (kor+eng)/2;
+      const result = avg>=70? "합격":"불합격";
+      document.getElementById('target').innerHTML = result;
+    }
+  </script>
+</body>
+</html>

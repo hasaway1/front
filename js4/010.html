@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="on()" id="on">켜기</button>
+  <img id="light">
+  <button onclick="off()" id="off">끄기</button>
+  <script>
+    const $light = document.getElementById('light');
+    const $on = document.getElementById('on');
+    const $off = document.getElementById('off');
+
+    $light.src="https://www.w3schools.com/js/pic_bulboff.gif";
+    $off.style.visibility = "hidden";
+
+    function on() {
+      $light.src="https://www.w3schools.com/js/pic_bulbon.gif";
+      $on.style.visibility = "hidden";
+      $off.style.visibility = "visible";
+    }
+
+    function off() {
+      $light.src="https://www.w3schools.com/js/pic_bulboff.gif";
+      $off.style.visibility = "hidden";
+      $on.style.visibility = "visible";
+    }
+  </script>
+</body>
+</html>

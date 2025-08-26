@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const  students = [
+      {name:'홍길동', jumsu:75},{name:'전우치', jumsu:60},{name:'임꺽정', jumsu:80}
+    ];
+
+    // 70점이상인 점수의 합계 : 155
+    let sum = 0;
+    for(const s of students) {
+      if(s.jumsu>=70) {
+        sujm+=jumsu;
+      }
+    }
+
+    // 70점이상인 점수의 평균 : 77.5
+    let count = 0;
+    for(const s of students) {
+      if(s.jumsu>=70) {
+        count++;
+      }
+    }
+
+    // 70점이상인 학생의 이름 : 홍길동, 임꺽정
+    const result = [];
+    for(const s of students) {
+      if(s.jumsu>=70) {
+        result.push(s);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="nai" placeholder="나이 입력...">
+  <button onclick="판정()"">판정</button>
+  <hr>
+  <p id="target"></p>
+  <script>
+    const name = "권승렬";
+    const $nai = document.getElementById("nai");
+    const $target = document.getElementById("target");
+    function 판정() {
+      const nai = +$nai.value;
+      if(nai>=18) {
+        $target.innerHTML = `${name}은 ${nai}세로 성인입니다`;
+      } else {
+        // 자바스크립트 템플릿 문자열. 문자열 안에서 ${이름}으로 변수를 읽을 수 있다
+        $target.innerHTML = `${name}은 ${nai}세로 미성년자입니다`;
+      }
+    }
+  </script>
+</body>
+</html>

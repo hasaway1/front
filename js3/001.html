@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>기본 타입 : 기본적인 값의 종류(number,string,boolean,undefined,null,object)</li>
+    <li>object는 참조타입 : 가리키고 있다</li>
+  </ul>
+  <script>
+    const a = 10;
+    const b = 10;
+    const x = {value:10};
+    const y = {value:10};
+    console.log(a==b);
+    console.log(x==y);
+
+    const z = y;
+    console.log(z==y);
+
+    //const i;
+    let j;
+
+    const m = null;
+    console.log(typeof m);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>요금계산기</h1>
+  <input type="text" id="nai" placeholder="나이 입력...">
+  <button onclick="calc()">계산</button>
+  <hr>
+  <script>
+    // 1. 나이를 입력
+    // 2. 나이가 25세미만, 65세이상이면 무료. 아니면 3000원
+    const nai = document.getElementById("nai").value;
+    const result = nai<25 || nai>=65? "무료입니다":"3000원입니다";
+    
+  </script>
+</body>
+</html>

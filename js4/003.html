@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="nai">
+  <button onclick="출력();">출력</button>
+  <hr>
+  <p id="target"></p>
+  <script>
+    function 출력() {
+      const nai = document.getElementById('nai').value;
+      const result = nai>=18? "성년":"미성년";
+      document.getElementById('target').innerHTML = result;
+    }
+    // 목표 : 나이를 입력받아 성년여부를 출력한다
+    // 1. 나이를 입력받는다
+    //    1.1 input으로 나이 입력
+    //    1.2 버튼을 클릭하면 입력한 나이를 읽어와 출력한다
+    // 2. 18세이상인지 확인
+    // 3. 성년 또는 미성년을 출력
+  </script>
+</body>
+</html>

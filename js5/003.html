@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    점수를 입력받아 등급을 출력하시오
+    A등급이면 파랑. B,C,D등급이면 초록. F등급은 빨강.
+    90  A등급   80 B등급    70 C등급    60 D등급      F등급
+  -->
+  <input type="number" id="jumsu" placeholder="점수 입력...">
+  <button onclick="판정();">판정</button>
+  <hr>
+  <div id="result"></div>
+  <script>
+    function 판정() {
+      const jumsu = +document.getElementById('jumsu').value;
+      // validation
+      if(jumsu>100 || jumsu<0) {
+        alert("점수는 0에서 100사이입니다");
+        document.getElementById('jumsu').value="";
+        document.getElementById('jumsu').focus();
+        // 함수를 종료시킨다
+        return;
+      }
+      const $result = document.getElementById('result');
+      if(jumsu>=90) {
+        $result.innerHTML = `<p class='blue'>A등급</p>`
+      } else if(jumsu>=80) {
+        $result.innerHTML = `<p class='green'>B등급</p>`
+      } else if(jumsu>=70) {
+        $result.innerHTML = `<p class='green'>C등급</p>`
+      } else if(jumsu>=60) {
+        $result.innerHTML = `<p class='green'>D등급</p>`
+      } else {
+        $result.innerHTML = `<p class='red'>F등급</p>`
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>로그인</h1>
+  <input type="text" id="username" placeholder="아이디...">
+  <input type="text" id="password" placeholder="비밀번호...">
+  <button onclick="login();">로그인</button>
+  <script>
+    // 아래 obj는 JS 전용 정보
+    // const obj = {irum:'홍길동', nai:20};
+    // 언어들이 객체 정보를 문자열로 주고 받는 표준 : JSON
+    // const json = JSON.stringify(obj);
+    // console.log(JSON.parse(json));
+
+    // 1. 로그인되었다면 todos.html로 이동
+    // 2. localStorage에 회원정보를 꺼내온다 -> 회원정보가 null이면 signup.html로 이동해 회원가입 요청
+    // 3. 로그인 성공하면 todos.html로 이동
+    // 4. 실패하면 에러 메시지
+    const username = sessionStorage.getItem('username');
+    if(username!==null) {
+      location.href = 'todos.html';
+    }
+
+    const usersJson = localStorage.getItem('users');
+    if(usersJson===null) {
+      location.href = "signup.html";
+    }
+    const users = JSON.parse(usersJson);
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      let 비교성공 = false;
+      for(const u of users) {
+        if(username===u.username && password===u.password) {
+          비교성공 = true;
+          break;
+        } 
+      }
+      if(비교성공) {
+        sessionStorage.setItem('username', username);
+        location.href="todos.html";
+      } else {
+        alert("로그인에 실패했습니다");
+      }
+    }
+
+    
+  </script>
+</body>
+</html>

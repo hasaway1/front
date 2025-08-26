@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 로그인되었다면 todos.html로
+    // 2. 사용자들의 정보를 저장할 users를 처리
+    if(sessionStorage.getItem('username')!==null) {
+      location.href = "todos.html";
+    }
+
+    const usersJson = localStorage.getItem('users');
+    const users = usersJson===null? [] : JSON.parse(usersJson);
+  </script>
+</head>
+<body>
+  <h1>회원가입</h1>
+  <input type="text" id="username" placeholder="아이디...">
+  <input type="text" id="password" placeholder="비밀번호...">
+  <button onclick="signup();">가입하기</button>
+  <script>
+    // 3. 아이디를 입력하면 아이디가 이미 users에 존재하는 지 확인 -> 에러메시지
+    // 4. 아이디가 사용가능하다면 추가
+    const signup = function() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      for(const u of users) {
+        // 사용중인 아이디면 처리 중지
+        if(username===u.username) {
+          alert("사용중인 아이디입니다");
+          return;
+        }
+      }
+      // 38라인이 실행되었다? -> return되지 않았다 -> 사용가능하니 users에 저장 -> localStorage 갱신
+      const user = {username, password};
+      users.push(user);
+      localStorage.setItem('users', JSON.stringify(users));
+      location.href = "login.html";
+    }
+    
+  </script>
+</body>
+</html>

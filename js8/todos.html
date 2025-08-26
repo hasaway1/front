@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todos</title>
+  <style>
+    .finish { text-decoration: line-through;}
+  </style>
+</head>
+<body>
+  <input type="text" id="title" placeholder="할일 입력">
+  <button>할일 추가</button>
+  <hr>
+  <table>
+    <thead><tr><th>번호</th><th>할일</th><th></th></tr></thead>
+    <tbody id="todos">
+    </tbody>
+  </table>
+  <script>
+    let tno=4;
+    const todos = [ {tno:1, title:'자바공부', finish:false}, {tno:2, title:'영어공부', finish:false}, {tno:3, title:'밤새음주', finish:true}
+    ];
+    const $tbody = document.getElementById('todos');
+
+    function print() {
+      let html = '';
+      for(const todo of todos) {
+        html += `<tr>
+            <td>${todo.tno}</td>
+            <td class='${todo.finish?"finish":""}'>${todo.title}</td>
+            <td>
+              <button onclick='remove(${todo.tno})'>삭제</button>
+            </td>
+          </tr>
+        `;
+      }
+      $tbody.innerHTML = html;
+    }
+    print();
+
+    function remove(tno) {
+      for(let i=0;i<todos.length;i++) {
+        if(todos[i].tno===tno) {
+          todos.splice(i,1);
+          break;
+        }
+      }
+      print();
+    }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .blue { color: blue; }
+    .red { color: red;}
+    #app {
+      width:600px;
+      margin: 0 auto;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" id="eng" placeholder="영어 점수..."><br>
+    <input type="text" id="kor" placeholder="국어 점수..."><br>
+    <button onclick="판정();">판정</button>
+    <div id="result"></div>
+  </div>
+  <!-- 영어점수와 국어점수를 입력받아 모두 70점이상이면 합격, 아니면 불합격으로.
+       합격이면 파랑 글자, 불합격이면 빨강 글자
+  -->
+  <script>
+    function 판정() {
+      const eng = +document.getElementById('eng').value;
+      const kor = +document.getElementById('kor').value;
+      const $result = document.getElementById('result');
+      let html;
+      if(eng>=70 && kor>=70) {
+        html = `<p class='blue'>합격입니다</p>`;
+      } else {
+        html = `<p class='red'>불합격입니다</p>`
+      }
+      $result.innerHTML = html;
+    }
+  </script>
+</body>
+</html>

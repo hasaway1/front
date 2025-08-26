@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 비로그인이면 login.html으로
+    const username = sessionStorage.getItem('username');
+    if(username===null) {
+      location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+  <button onclick="logout();">로그아웃</button>
+  <script>
+    function logout() {
+      sessionStorage.removeItem('username');
+      location.href="login.html";
+    }
+  </script>
+</body>
+</html>

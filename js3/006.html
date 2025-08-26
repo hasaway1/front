@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 443의 경우 400, 576의 경우 500을 출력하는 코드를 작성하시오
+    // 443    400       -43       %100
+    // 576    500       -76     
+    
+    
+    const a = 443;
+    const nmg1 = a%100;
+    console.log(a-nmg1);
+    
+    const mok = parseInt(a/100);
+    console.log(mok*100);
+
+    console.log(parseInt((a/100))*100);
+  </script>
+</body>
+</html>
